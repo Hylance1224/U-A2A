@@ -1,0 +1,10 @@
+android.view.MotionEvent.getAction
+android.view.View.getId
+android.view.MotionEvent.getRawX
+android.view.MotionEvent.getRawY()
+android.view.View.getWidth
+android.view.View.getHeight
+java.lang.Math.hypot
+android.view.ViewAnimationUtils.createCircularReveal
+android.view.View.setBackgroundColor
+android.animation.Animator.start

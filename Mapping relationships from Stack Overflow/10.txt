@@ -1,0 +1,4 @@
+android.view.View.findViewById
+android.view.animation.AnimationUtils.loadAnimation
+android.view.View.setVisibility
+android.view.View.startAnimation

@@ -1,0 +1,67 @@
+from torch import nn
+
+class ThreeD_conv(nn.Module):
+    def __init__(self, opt, ndf=64, ngpu=1):
+        super(ThreeD_conv, self).__init__()
+        self.ngpu = ngpu
+        self.ndf = ndf
+        self.z_dim = opt.z_dim
+        self.frame = opt.frame
+        self.image_height = opt.image_height
+        self.image_width = opt.image_width
+        self.n_channels = opt.n_channels
+        self.conv_size_height = int(opt.image_height / 16)
+        self.conv_size_width = int(opt.image_width / 16)
+
+        self.encoder = nn.Sequential(
+            nn.Conv3d(opt.n_channels, ndf, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf),
+            nn.ReLU(inplace=True),
+            nn.Conv3d(ndf, ndf * 2, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf * 2),
+            nn.ReLU(inplace=True),
+            nn.Conv3d(ndf * 2, ndf * 4, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf * 4),
+            nn.ReLU(inplace=True),
+            nn.Conv3d(ndf * 4, ndf * 8, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf * 8),
+            nn.ReLU(inplace=True),
+        )
+        self.fc1 = nn.Sequential(
+            nn.Linear(int((ndf*8)*(self.frame/16)*self.conv_size_height*self.conv_size_width),self.z_dim ),#6*6
+            nn.ReLU(inplace=True),
+        )
+        self.fc2 = nn.Sequential(
+            nn.Linear(self.z_dim,int((ndf*8)*(self.frame/16)*self.conv_size_height*self.conv_size_width)),#6*6
+            nn.ReLU(inplace=True),
+        )
+        self.decoder = nn.Sequential(
+            nn.ConvTranspose3d((ndf*8), ndf*4, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf * 4),
+            nn.ReLU(inplace=True),
+            nn.ConvTranspose3d(ndf*4, ndf * 2, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf * 2),
+            nn.ReLU(inplace=True),
+            nn.ConvTranspose3d(ndf * 2, ndf , 4, 2, 1, bias=False),
+            nn.BatchNorm3d(ndf),
+            nn.ReLU(inplace=True),
+            nn.ConvTranspose3d(ndf , opt.n_channels, 4, 2, 1, bias=False),
+            nn.Tanh(),
+        )
+
+    def forward(self, input, mode):
+        bs = input.size(0)
+        if mode == 'train':
+            feature = self.encoder(input)
+            z = self.fc1(feature.view(bs, -1))
+            feature = self.fc2(z).reshape(bs, self.ndf * 8, int(self.frame / 16), self.conv_size_height,
+                                          self.conv_size_width)
+            output = self.decoder(feature).view(bs, self.n_channels, self.frame, self.image_height, self.image_width)
+            return output
+        else:
+            feature = self.encoder(input)
+            z = self.fc1(feature.view(bs, -1))
+            feature = z.view(128)
+            return feature
+
+

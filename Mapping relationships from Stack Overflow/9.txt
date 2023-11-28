@@ -1,0 +1,14 @@
+android.view.View.getParent
+android.view.View.getWidth
+.android.view.View.MeasureSpec.makeMeasureSpec
+android.view.View.MeasureSpec.makeMeasureSpec
+android.view.View.measure
+android.view.View.getMeasuredHeight
+android.view.View.getLayoutParams
+android.view.View.setVisibility
+android.view.animation.Animation
+android.view.View.getContext
+android.content.res.getResources
+android.util.getDisplayMetrics
+android.animation.Animator.setDuration
+android.view.View.startAnimation

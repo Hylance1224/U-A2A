@@ -1,0 +1,12 @@
+android.view.View.setTranslationX
+android.view.View.setTranslationX
+android.view.View.getWidth
+android.view.ViewPropertyAnimator.translationXBy
+android.animation.Animator.setDuration
+android.animation.Animator.setInterpolator
+android.animation.Animator.AnimatorListener.onAnimationStart
+android.view.View.animate
+android.view.View.getTranslationX
+android.animation.Animator.setDuration
+android.animation.Animator.setInterpolator
+android.view.View.setVisibility

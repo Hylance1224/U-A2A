@@ -1,0 +1,7 @@
+android.view.View.findViewById
+android.view.View.getWidth
+android.view.View.getHeight
+java.lang.Math.hypot
+android.view.ViewAnimationUtils.createCircularReveal
+android.view.View.setVisibility
+android.animation.Animator.start

@@ -1,0 +1,10 @@
+android.view.View.findViewById
+android.view.View.findViewById
+android.view.View.setVisibility
+android.view.View.setText
+android.view.View.getHeight
+android.view.animation.TranslateAnimation
+android.animation.Animator.setDuration
+android.view.animation.Animation.setFillAfter
+android.view.View.startAnimation
+android.view.View.setText

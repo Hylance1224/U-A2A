@@ -1,0 +1,17 @@
+android.view.WindowManager.getDefaultDisplay
+android.view.View.getWidth
+android.view.View.getHeight
+android.view.View.setBackgroundColor
+android.graphics.Matrix.reset
+android.view.View.setBackgroundColor
+android.animation.Animator.setDuration
+android.view.animation.Animation.setFillAfter
+android.view.animation.Animation.setInterpolator
+android.view.animation.AccelerateInterpolator
+android.graphics.Matrix getMatrix
+android.graphics.Camera.translate
+android.graphics.Camera.rotateX
+android.graphics.Camera.getMatrix
+android.graphics.Camera.restore
+android.graphics.Camera.preTranslate
+android.graphics.Matrix.postTranslate

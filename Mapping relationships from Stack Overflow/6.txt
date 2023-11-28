@@ -1,0 +1,5 @@
+androidx.transition.Fade
+android.animation.Animator.setDuration
+androidx.transition.Transition.addTarget
+androidx.transition.TransitionManager.beginDelayedTransition
+android.view.View.setVisibility

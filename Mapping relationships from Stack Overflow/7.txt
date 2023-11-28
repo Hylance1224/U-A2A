@@ -1,0 +1,6 @@
+android.view.View.animate
+android.view.ViewPropertyAnimator.translationXBy
+AccelerateDecelerateInterpolator
+android.animation.Animator.setInterpolator
+android.animation.Animator.setDuration
+android.animation.Animator.start
