@@ -28,7 +28,7 @@ The APK files of apps are available at https://1drv.ms/f/s!AhgAsR1GCvxggR1i-JaP4
 
 **2. The Model Training.** Create a *model* folder and a *train data* folder in *U-A2A* folder. Then, select 4 folds from the decompressed data (for example, you can select 1-fold, 2-fold, 3-fold, and 4-fold) and paste them into *train data* fold. Finally, run *train.py* in *U-A2A* fold to obtain the trained model. The trained model will be saved in *model* folder.
 
-**3. Model Testing.** Create a *test data* folder and a *result* folder in *U-A2A* folder. Copy the remaining fold of the decompressed data into *test data* folder. Then, Run the *test_model.py* in *U-A2A* fold. The program will generate result documents in *result* folder. Each document stores the input animation, the input animation API sequence, and the recommended animation APIs.
+**3. Model Testing.** Create a *test data* folder and a *result* folder in *U-A2A* folder. Copy the remaining fold of the decompressed data into *test data* folder. Then, Run the *test_model.py* in *U-A2A* fold. The program will generate result documents in *result* folder. Each document stores a UI animation task, an animation API context, and the recommended animation APIs.
 
 **4. Metric calculating.** Run the *calculate.py* in *U-A2A* fold. The program will generate the average accuracy results.
 
