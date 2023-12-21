@@ -19,7 +19,7 @@ The relevant codes of our method include API recommendation model(U-A2A), UI ani
 **4.   Training animation feature extractor.** The code is in the *Training3D-CNN* folder. The architecture has two modules: an encoder, and a decoder. The encoder and decoder are built based on 3D-CNN model. By running main.py in the folder, you can generate a 3D-CNN animation feature extractor model file 3D-CNN.pkl. After moving the generated 3D-CNN.pkl to the U-A2A folder, it can be used to extract animation features in the API recommendation model.
 
 ## Data
-The mapping relationships of UI animations and animation API sequences are available at https://1drv.ms/f/s!AhgAsR1GCvxgbSb_UpTNJ5b41lw?e=Oob8W
+The mapping relationships of UI animations and animation API sequences are available at https://1drv.ms/f/s!AhgAsR1GCvxgbSb_UpTNJ5blw?e=Oob8W
 
 The APK files of apps are available at https://1drv.ms/f/s!AhgAsR1GCvxggR1i-JaP4NdnkgAk?e=7XROWQ
 
